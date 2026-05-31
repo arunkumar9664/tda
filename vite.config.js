@@ -4,4 +4,6 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
+  // GitHub Pages: https://arunkumar9664.github.io/tda/
+  base: process.env.GITHUB_PAGES === 'true' ? '/tda/' : '/',
 })
