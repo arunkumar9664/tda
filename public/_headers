@@ -1,0 +1,12 @@
+# Correct MIME types for Vite assets (prevents module script errors)
+/assets/*.js
+  Content-Type: application/javascript; charset=utf-8
+
+/assets/*.mjs
+  Content-Type: application/javascript; charset=utf-8
+
+/assets/*.css
+  Content-Type: text/css; charset=utf-8
+
+/src/*
+  Content-Type: text/plain

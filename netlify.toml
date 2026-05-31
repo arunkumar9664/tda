@@ -1,0 +1,15 @@
+# Netlify deployment — must publish the Vite build output, not the repo root.
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+  NPM_FLAGS = "--legacy-peer-deps=false"
+  # Ensure GitHub Pages base path is NOT used on Netlify
+  GITHUB_PAGES = "false"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

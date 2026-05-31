@@ -1,9 +1,17 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// https://vite.dev/config/
+// GitHub Pages subpath only when GITHUB_PAGES=true (see .github/workflows/deploy.yml).
+// Netlify and local builds use base '/' (default).
+const isGitHubPages = process.env.GITHUB_PAGES === 'true'
+
 export default defineConfig({
   plugins: [react()],
-  // GitHub Pages: https://arunkumar9664.github.io/tda/
-  base: process.env.GITHUB_PAGES === 'true' ? '/tda/' : '/',
+  base: isGitHubPages ? '/tda/' : '/',
+  build: {
+    outDir: 'dist',
+    emptyOutDir: true,
+    assetsDir: 'assets',
+    sourcemap: false,
+  },
 })
