@@ -1,0 +1,140 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+@use '../../styles/breakpoints' as *;
+
+.section {
+  padding: $section-padding 0;
+  background: linear-gradient(135deg, $black 0%, #1a0a0c 100%);
+  color: $white;
+}
+
+.container {
+  @include container;
+}
+
+.carousel {
+  max-width: 1000px;
+  margin-inline: auto;
+  width: 100%;
+}
+
+.slide {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: center;
+
+  @media (max-width: $bp-lg) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.videoFrame {
+  position: relative;
+  border-radius: $radius-lg;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
+  width: 100%;
+
+  @media (max-width: $bp-lg) {
+    max-width: 480px;
+    margin-inline: auto;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.playOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba($black, 0.35);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  font-family: $font-button;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.playBtn {
+  width: clamp(48px, 12vw, 64px);
+  height: clamp(48px, 12vw, 64px);
+  display: grid;
+  place-items: center;
+  background: $primary;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  color: $white;
+}
+
+.content {
+  min-width: 0;
+}
+
+.stars {
+  color: $gold;
+  font-size: 1.15rem;
+  letter-spacing: 0.12em;
+  margin-bottom: 0.75rem;
+}
+
+blockquote {
+  font-family: $font-heading;
+  font-size: clamp(1.1rem, 3.5vw, 1.65rem);
+  font-style: italic;
+  line-height: 1.45;
+  margin-bottom: 1rem;
+}
+
+.journey {
+  font-size: clamp(0.88rem, 2.5vw, 0.95rem);
+  color: rgba($white, 0.7);
+  margin-bottom: 1.25rem;
+  padding-left: 1rem;
+  border-left: 3px solid $primary;
+  line-height: 1.55;
+}
+
+footer {
+  strong {
+    display: block;
+    font-size: 1.05rem;
+    margin-bottom: 0.25rem;
+  }
+
+  span {
+    font-size: 0.85rem;
+    color: $gold;
+  }
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+
+  button {
+    width: 10px;
+    height: 10px;
+    min-width: 10px;
+    border-radius: 50%;
+    background: rgba($white, 0.25);
+    transition: background 0.3s, transform 0.3s;
+    padding: 0;
+
+    &.active {
+      background: $gold;
+      transform: scale(1.2);
+    }
+  }
+}

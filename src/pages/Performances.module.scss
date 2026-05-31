@@ -1,0 +1,181 @@
+@use '../styles/variables' as *;
+@use '../styles/mixins' as *;
+@use '../styles/breakpoints' as *;
+
+.page {
+  background: $white;
+}
+
+.featured {
+  padding: $section-padding 0;
+}
+
+.featuredInner {
+  @include container;
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: start;
+
+  @media (max-width: $bp-xl) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.videoWrap {
+  border-radius: $radius-lg;
+  overflow: hidden;
+  box-shadow: $shadow;
+  background: $black;
+  width: 100%;
+  min-width: 0;
+
+  img,
+  .video {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    display: block;
+  }
+}
+
+.featuredInfo {
+  min-width: 0;
+
+  h2 {
+    font-family: $font-heading;
+    font-size: clamp(1.35rem, 4vw, 2.25rem);
+    margin-bottom: 0.65rem;
+    line-height: 1.2;
+  }
+
+  .meta {
+    font-family: $font-button;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $primary;
+    margin-bottom: 0.85rem;
+    line-height: 1.4;
+  }
+
+  p {
+    color: $gray-mid;
+    line-height: 1.65;
+    margin-bottom: 1.25rem;
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
+  }
+}
+
+.gridSection {
+  padding: $section-padding 0;
+  background: $gray;
+}
+
+.container {
+  @include container;
+
+  h2 {
+    font-family: $font-heading;
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-inline: 0.5rem;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1rem, 2.5vw, 1.5rem);
+
+  @media (max-width: $bp-xl) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: $bp-sm) {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin-inline: auto;
+  }
+}
+
+.card {
+  position: relative;
+  text-align: left;
+  background: $white;
+  border-radius: $radius-lg;
+  overflow: hidden;
+  border: 2px solid transparent;
+  box-shadow: $shadow;
+  transition: border-color $transition, box-shadow $transition;
+  width: 100%;
+
+  &.active {
+    border-color: $gold;
+    box-shadow: 0 0 0 4px rgba($gold, 0.2), $shadow-hover;
+  }
+
+  img {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+  }
+}
+
+.cardBody {
+  padding: clamp(1rem, 2.5vw, 1.25rem);
+
+  span {
+    font-family: $font-button;
+    font-size: 0.65rem;
+    color: $primary;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  h3 {
+    font-family: $font-heading;
+    font-size: clamp(1rem, 2.8vw, 1.1rem);
+    margin: 0.3rem 0;
+    line-height: 1.25;
+  }
+
+  p {
+    font-size: 0.82rem;
+    color: $gray-mid;
+    line-height: 1.4;
+  }
+}
+
+.badge {
+  position: absolute;
+  top: 0.65rem;
+  right: 0.65rem;
+  padding: 0.3rem 0.65rem;
+  background: $gold;
+  color: $black;
+  font-family: $font-button;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-radius: 50px;
+}
+
+.cta {
+  padding: clamp(2.5rem, 6vw, 4rem) clamp(1rem, 4vw, 2rem);
+  background: $black;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+
+  p {
+    font-family: $font-heading;
+    font-size: clamp(1.2rem, 4vw, 1.5rem);
+    color: $white;
+    padding-inline: 0.5rem;
+  }
+}

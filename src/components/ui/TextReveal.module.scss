@@ -1,0 +1,15 @@
+.reveal {
+  display: inline-block;
+}
+
+.wordWrap {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+  perspective: 400px;
+}
+
+.word {
+  display: inline-block;
+  transform-origin: bottom center;
+}

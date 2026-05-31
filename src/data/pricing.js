@@ -1,0 +1,47 @@
+export const pricingPlans = [
+  {
+    id: 'beginner',
+    name: 'Beginner',
+    price: 2499,
+    period: 'per month',
+    featured: false,
+    features: [
+      '2 classes per week',
+      'Group technique sessions',
+      'Studio practice hours',
+      'Quarterly progress assessments',
+      'Jaipur community showcase access',
+      'Foundation certification pathway',
+    ],
+  },
+  {
+    id: 'professional',
+    name: 'Professional',
+    price: 4999,
+    period: 'per month',
+    featured: true,
+    features: [
+      '4 classes per week',
+      'Monthly personal coaching (30 min)',
+      'Priority gala & festival casting',
+      'State competition team eligibility',
+      'Advanced certification track',
+      'Guest masterclass inclusion',
+    ],
+  },
+  {
+    id: 'elite',
+    name: 'Elite Performer',
+    price: 8499,
+    period: 'per month',
+    featured: false,
+    features: [
+      'Unlimited weekly classes',
+      'Weekly personal coaching (60 min)',
+      'Lead role performance access',
+      'National tour & audition consideration',
+      'Full professional certification',
+      'TV, film & reality show preparation',
+    ],
+  },
+];

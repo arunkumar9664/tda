@@ -1,0 +1,16 @@
+@use '../../styles/variables' as *;
+
+.orbs {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba($gold, 0.18) 0%, transparent 70%);
+  filter: blur(2px);
+}

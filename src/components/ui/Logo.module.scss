@@ -1,0 +1,63 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+@use '../../styles/breakpoints' as *;
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.4rem, 2vw, 0.65rem);
+  color: $white;
+  min-width: 0;
+}
+
+.mark {
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+.header .mark {
+  width: clamp(36px, 10vw, 44px);
+  height: clamp(36px, 10vw, 44px);
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.35));
+}
+
+.footer .mark {
+  width: clamp(40px, 8vw, 48px);
+  height: clamp(40px, 8vw, 48px);
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+  min-width: 0;
+
+  strong {
+    font-family: $font-heading;
+    font-size: clamp(0.85rem, 2.5vw, 1.05rem);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  small {
+    font-family: $font-button;
+    font-size: clamp(0.5rem, 1.8vw, 0.6rem);
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: $gold;
+    white-space: nowrap;
+  }
+
+  @media (max-width: $bp-xl) {
+    display: none;
+  }
+}
+
+.full .mark {
+  width: min(220px, 70vw);
+  height: auto;
+}

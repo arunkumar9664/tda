@@ -1,0 +1,77 @@
+@use 'variables' as *;
+@use 'breakpoints' as *;
+
+@mixin container {
+  width: 100%;
+  max-width: $container-max;
+  margin-inline: auto;
+  padding-inline: clamp(1rem, 4vw, 2.5rem);
+}
+
+@mixin container-narrow {
+  @include container;
+  max-width: 1000px;
+}
+
+@mixin media-down($width) {
+  @media (max-width: $width) {
+    @content;
+  }
+}
+
+@mixin media-up($width) {
+  @media (min-width: $width) {
+    @content;
+  }
+}
+
+@mixin section-label {
+  font-family: $font-button;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: $primary;
+}
+
+@mixin heading-xl {
+  font-family: $font-heading;
+  font-weight: 600;
+  line-height: 1.1;
+  color: $black;
+}
+
+@mixin glass-dark {
+  background: rgba(15, 15, 15, 0.75);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+@mixin hover-lift {
+  transition: transform $transition, box-shadow $transition;
+
+  @media (hover: hover) {
+    &:hover {
+      transform: translateY(-8px);
+      box-shadow: $shadow-hover;
+    }
+  }
+}
+
+@mixin focus-ring {
+  &:focus-visible {
+    outline: 2px solid $gold;
+    outline-offset: 3px;
+  }
+}
+
+@mixin stack-buttons {
+  flex-direction: column;
+  align-items: stretch;
+  max-width: 20rem;
+  margin-inline: auto;
+
+  > * {
+    width: 100%;
+  }
+}

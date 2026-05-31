@@ -1,0 +1,21 @@
+@use '../../styles/variables' as *;
+
+.stat {
+  text-align: center;
+}
+
+.number {
+  display: block;
+  font-family: $font-heading;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: $primary;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+
+.label {
+  font-size: 0.9rem;
+  color: $gray-mid;
+  font-weight: 500;
+}

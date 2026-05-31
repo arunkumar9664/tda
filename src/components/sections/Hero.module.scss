@@ -1,0 +1,155 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+@use '../../styles/breakpoints' as *;
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: $black;
+}
+
+.mediaWrap {
+  position: absolute;
+  inset: -5% 0 0;
+  width: 100%;
+  height: 110%;
+  will-change: transform;
+  overflow: hidden;
+
+  @include media-down($bp-md) {
+    inset: 0;
+    height: 100%;
+  }
+}
+
+.media {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 25%;
+  display: block;
+
+  @include media-down($bp-md) {
+    object-position: center 20%;
+  }
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background:
+    linear-gradient(180deg, rgba($black, 0.55) 0%, rgba($black, 0.25) 35%, rgba($black, 0.5) 70%),
+    linear-gradient(135deg, rgba($primary, 0.2) 0%, transparent 50%),
+    linear-gradient(0deg, rgba($black, 0.75) 0%, transparent 45%);
+}
+
+.shimmer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40%;
+  height: 100%;
+  z-index: 2;
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba($white, 0.05) 50%,
+    transparent 60%
+  );
+  pointer-events: none;
+
+  @include media-down($bp-md) {
+    display: none;
+  }
+}
+
+.content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  padding: calc($header-height + 3rem) clamp(1rem, 4vw, 1.5rem) 5rem;
+  max-width: 900px;
+  width: 100%;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-family: $font-button;
+  font-size: clamp(0.6rem, 2.5vw, 0.75rem);
+  font-weight: 600;
+  letter-spacing: clamp(0.08em, 1.5vw, 0.2em);
+  text-transform: uppercase;
+  color: $gold;
+  margin-bottom: 1.25rem;
+  line-height: 1.5;
+  max-width: 100%;
+  padding-inline: 0.25rem;
+  text-shadow: 0 2px 20px rgba($black, 0.5);
+}
+
+.heading {
+  font-family: $font-heading;
+  font-size: clamp(2.25rem, 10vw, 5.5rem);
+  font-weight: 600;
+  color: $white;
+  line-height: 1.08;
+  margin-bottom: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
+  text-shadow: 0 4px 40px rgba($black, 0.45);
+}
+
+.line,
+.lineGold {
+  display: block;
+  max-width: 100%;
+}
+
+.lineGold {
+  font-style: italic;
+  color: $gold;
+}
+
+.subheading {
+  font-size: clamp(0.85rem, 3vw, 1.5rem);
+  color: rgba($white, 0.95);
+  font-weight: 300;
+  letter-spacing: clamp(0.06em, 1vw, 0.15em);
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  padding-inline: 0.5rem;
+  text-shadow: 0 2px 16px rgba($black, 0.4);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  width: 100%;
+
+  @include media-down($bp-md) {
+    @include stack-buttons;
+  }
+}
+
+.scrollWrap {
+  position: absolute;
+  bottom: clamp(1.25rem, 4vw, 2.5rem);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+
+  @include media-down($bp-sm) {
+    display: none;
+  }
+}

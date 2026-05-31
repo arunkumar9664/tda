@@ -1,0 +1,214 @@
+@use '../styles/variables' as *;
+@use '../styles/mixins' as *;
+@use '../styles/breakpoints' as *;
+
+.page {
+  background: $white;
+}
+
+.intro {
+  padding: $section-padding 0;
+}
+
+.introGrid {
+  @include container;
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: start;
+
+  @media (max-width: $bp-xl) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+
+  @media (max-width: $bp-sm) {
+    grid-template-columns: 1fr;
+  }
+
+  span {
+    display: block;
+    font-family: $font-button;
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: $primary;
+    margin-bottom: 0.3rem;
+  }
+
+  strong {
+    font-family: $font-heading;
+    font-size: clamp(1rem, 2.5vw, 1.1rem);
+    line-height: 1.3;
+  }
+}
+
+.copy {
+  min-width: 0;
+}
+
+.lead {
+  font-size: clamp(1.05rem, 2.5vw, 1.2rem);
+  font-weight: 500;
+  color: $black;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.copy p {
+  color: $gray-mid;
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
+}
+
+.curriculum {
+  padding: $section-padding 0;
+  background: $gray;
+}
+
+.inner {
+  @include container;
+}
+
+.curriculum .inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: start;
+
+  @media (max-width: $bp-lg) {
+    grid-template-columns: 1fr;
+  }
+
+  h2 {
+    font-family: $font-heading;
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    grid-column: 1 / -1;
+    margin-bottom: 0.5rem;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+    min-width: 0;
+  }
+
+  li {
+    padding: 0.9rem 1.1rem;
+    background: $white;
+    border-radius: $radius;
+    font-weight: 500;
+    font-size: clamp(0.88rem, 2.5vw, 1rem);
+    border-left: 4px solid $primary;
+    box-shadow: 0 4px 20px rgba($black, 0.04);
+    line-height: 1.4;
+  }
+}
+
+.schedule {
+  padding: clamp(1.25rem, 3vw, 2rem);
+  background: $black;
+  color: $white;
+  border-radius: $radius-lg;
+
+  h3 {
+    font-family: $font-heading;
+    font-size: clamp(1.15rem, 3vw, 1.35rem);
+    margin-bottom: 0.75rem;
+    color: $gold;
+  }
+
+  p {
+    line-height: 1.65;
+    color: rgba($white, 0.85);
+    font-size: clamp(0.88rem, 2.5vw, 1rem);
+  }
+
+  .note {
+    margin-top: 1rem;
+    font-size: 0.88rem;
+    color: rgba($white, 0.6);
+    padding-top: 1rem;
+    border-top: 1px solid rgba($white, 0.15);
+  }
+}
+
+.related {
+  padding: $section-padding 0;
+
+  .inner {
+    @include container;
+  }
+
+  h2 {
+    font-family: $font-heading;
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+}
+
+.relatedGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1rem, 3vw, 1.5rem);
+  margin-bottom: 2rem;
+
+  @media (max-width: $bp-lg) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: $bp-sm) {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin-inline: auto;
+  }
+}
+
+.relatedCard {
+  display: block;
+  border-radius: $radius-lg;
+  overflow: hidden;
+  position: relative;
+  @include hover-lift;
+
+  img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+  }
+
+  span {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+    background: linear-gradient(transparent, rgba($black, 0.85));
+    color: $white;
+    font-family: $font-heading;
+    font-size: clamp(1rem, 3vw, 1.25rem);
+  }
+
+  @media (hover: hover) {
+    &:hover img {
+      transform: scale(1.06);
+    }
+  }
+}
+
+.enroll {
+  display: flex;
+  margin-inline: auto;
+  padding-inline: 1rem;
+  width: 100%;
+  max-width: 20rem;
+}

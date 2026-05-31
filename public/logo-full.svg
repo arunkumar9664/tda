@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 72" fill="none" role="img" aria-label="Tanya Dance Academy Jaipur">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F5B700"/>
+      <stop offset="100%" stop-color="#D4A000"/>
+    </linearGradient>
+    <linearGradient id="r" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#D72638"/>
+      <stop offset="100%" stop-color="#9E1828"/>
+    </linearGradient>
+  </defs>
+  <!-- Icon -->
+  <circle cx="36" cy="36" r="34" fill="#0F0F0F" stroke="url(#g)" stroke-width="1.5"/>
+  <path d="M36 14 C40 22 46 25 52 27 C46 29 40 32 36 38 C32 32 26 29 20 27 C26 25 32 22 36 14Z" fill="url(#g)"/>
+  <circle cx="36" cy="24" r="2" fill="#0F0F0F"/>
+  <path d="M36 30 C34 30 32 33 32 36 C32 39 34 42 36 42 C38 42 40 39 40 36 C40 33 38 30 36 30Z" fill="url(#g)"/>
+  <path d="M36 42 L36 54 M36 46 L28 58 M36 46 L44 56 M36 54 L30 64 M36 54 L42 64" stroke="url(#g)" stroke-width="2.2" stroke-linecap="round"/>
+  <!-- Text -->
+  <text x="80" y="32" font-family="Georgia, 'Playfair Display', serif" font-size="22" font-weight="700" fill="#FFFFFF">Tanya Dance Academy</text>
+  <text x="80" y="52" font-family="Arial, sans-serif" font-size="11" font-weight="600" fill="url(#g)" letter-spacing="2">JAIPUR · RAJASTHAN · INDIA</text>
+  <rect x="80" y="58" width="120" height="2" fill="url(#r)" rx="1"/>
+</svg>

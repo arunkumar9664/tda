@@ -1,0 +1,141 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+@use '../../styles/breakpoints' as *;
+
+.section {
+  padding: $section-padding 0;
+  background: $white;
+}
+
+.container {
+  @include container;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: start;
+
+  @media (max-width: $bp-xl) {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+  min-width: 0;
+
+  label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-family: $font-button;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: $gray-mid;
+  }
+
+  input,
+  select,
+  textarea {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    border: 1px solid rgba($black, 0.12);
+    border-radius: 8px;
+    font-family: $font-body;
+    font-size: 16px;
+    transition: border-color 0.25s;
+
+    &:focus {
+      outline: none;
+      border-color: $primary;
+    }
+  }
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.15rem;
+
+  @media (max-width: $bp-md) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.success {
+  padding: clamp(1.25rem, 4vw, 2rem);
+  background: rgba($primary, 0.08);
+  border-left: 4px solid $primary;
+  font-size: clamp(0.95rem, 2.5vw, 1.05rem);
+  line-height: 1.6;
+  color: $black;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  min-width: 0;
+}
+
+.block h4 {
+  font-family: $font-button;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: $primary;
+  margin-bottom: 0.35rem;
+}
+
+.block a,
+.block p {
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
+  color: $black;
+  line-height: 1.5;
+  word-break: break-word;
+}
+
+.block a:hover {
+  color: $primary;
+}
+
+.socialLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+
+  a {
+    padding: 0.5rem 0.85rem;
+    background: $gray;
+    border-radius: 50px;
+    font-family: $font-button;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: capitalize;
+    transition: background 0.25s;
+
+    &:hover {
+      background: $black;
+      color: $white;
+    }
+  }
+}
+
+.map {
+  border-radius: $radius-lg;
+  overflow: hidden;
+  margin-top: 0.25rem;
+
+  img {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+  }
+}

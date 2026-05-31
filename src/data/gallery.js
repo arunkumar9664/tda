@@ -1,0 +1,81 @@
+export const galleryCategories = [
+  'All',
+  'Performances',
+  'Workshops',
+  'Competitions',
+  'International Tours',
+  'Studio Life',
+];
+
+export const galleryItems = [
+  {
+    id: 1,
+    category: 'Performances',
+    title: 'Winter Gala Finale',
+    image: 'https://images.unsplash.com/photo-1508700929628-666bc8bd86ea?w=600&q=80',
+    tall: true,
+  },
+  {
+    id: 2,
+    category: 'Workshops',
+    title: 'Masterclass with Guest Artist',
+    image: 'https://images.unsplash.com/photo-1518834109352-37bda034636a?w=600&q=80',
+    tall: false,
+  },
+  {
+    id: 3,
+    category: 'Competitions',
+    title: 'National Finals Backstage',
+    image: 'https://images.unsplash.com/photo-1547159415-ff32a293f946?w=600&q=80',
+    tall: false,
+  },
+  {
+    id: 4,
+    category: 'International Tours',
+    title: 'Paris Summer Intensive',
+    image: 'https://images.unsplash.com/photo-1518611012118-696072aa579a?w=600&q=80',
+    tall: true,
+  },
+  {
+    id: 5,
+    category: 'Studio Life',
+    title: 'Morning Technique Class',
+    image: 'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=600&q=80',
+    tall: false,
+  },
+  {
+    id: 6,
+    category: 'Performances',
+    title: 'Contemporary Ensemble',
+    image: 'https://images.unsplash.com/photo-1540039155739-5bb28b1f0d08?w=600&q=80',
+    tall: false,
+  },
+  {
+    id: 7,
+    category: 'Workshops',
+    title: 'Hip-Hop Lab Session',
+    image: 'https://images.unsplash.com/photo-1504609773096-104ff2c73ba4?w=600&q=80',
+    tall: true,
+  },
+  {
+    id: 8,
+    category: 'International Tours',
+    title: 'Tokyo Exchange Program',
+    image: 'https://images.unsplash.com/photo-1518834109352-37bda034636a?w=600&q=80',
+    tall: false,
+  },
+  {
+    id: 9,
+    category: 'Competitions',
+    title: 'Award Ceremony Moment',
+    image: 'https://images.unsplash.com/photo-1574169208507-843761b450a5?w=600&q=80',
+    tall: false,
+  },
+  {
+    id: 10,
+    category: 'Studio Life',
+    title: 'Rehearsal Preparation',
+    image: 'https://images.unsplash.com/photo-1547159415-ff32a293f946?w=600&q=80',
+    tall: true,
+  },
+];
